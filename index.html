@@ -115,6 +115,7 @@
 
 </head>
 
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 
@@ -231,7 +232,7 @@
 											<p><span class="title-s">Name: </span> <span>Aryan Singh</span></p>
 											<p><span class="title-s">Job Role: </span> <span>Backend Engineer</span>
 											</p>
-											<p><span class="title-s">Experience: </span> <span> 9 Months</span>
+											<p><span class="title-s">Experience: </span> <span id="experience"></span>
 											</p>
 											<p><span class="title-s">Address: </span> <span>Varanasi, India</span></p>
 										</div>
@@ -240,16 +241,10 @@
 
 								<div class="skill-mf">
 									<p class="title-s">Skills</p>
-									<span>HTML</span> <span class="pull-right">95%</span>
+									<span>HTML / CSS</span> <span class="pull-right">90%</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>CSS</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 90%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 
 									<span>JavaScript</span> <span class="pull-right">90%</span>
@@ -258,27 +253,49 @@
 											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 
-									<span>React</span> <span class="pull-right">80%</span>
+									<span>React.js</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%"
+											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>Node.js / Express.js</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>MongoDB / MySQL</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>Python</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>Machine Learning</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>Deep Learning (TensorFlow / Keras)</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>Generative AI / RAG (LangChain, FAISS)</span> <span
+										class="pull-right">80%</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 80%"
 											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 
-									<span>NodeJS</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<span>ExpressJS</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<span>MongoDB</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -538,7 +555,8 @@
 						<a href="https://github.com/OaryanO/gpt-lite" class="block-20 zoom-effect"
 							style="background-image: url('images/chatbot.jpg');"></a>
 						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/OaryanO/gpt-lite">Langgraph Chatbot</a>
+							<h3 class="heading"><a href="https://github.com/OaryanO/gpt-lite">Langgraph Agentic
+									Chatbot</a>
 							</h3>
 							<p>A production-style AI chatbot system supporting authenticated users, persistent chat
 								threads, streaming responses, and automated conversation title generation.</p>
@@ -770,6 +788,28 @@
 	<script src="js/scrollax.min.js"></script>
 
 	<script src="js/main.js"></script>
+
+	<script>
+		function calculateExperience(startDate) {
+			const start = new Date(startDate);
+			const now = new Date();
+
+			let years = now.getFullYear() - start.getFullYear();
+			let months = now.getMonth() - start.getMonth();
+
+			if (months < 0) {
+				years--;
+				months += 12;
+			}
+
+			if (years === 0) return months + " Months";
+			return years + " Years " + months + " Months";
+		}
+
+		document.getElementById("experience").textContent =
+			calculateExperience("2025-06-01");
+	</script>
+</body>
 
 </body>
 
